@@ -1,36 +1,117 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+---
 
-## Getting Started
+# 🚀 Next.js 15 + Tailwind CSS v4 Starter (TypeScript)
 
-First, run the development server:
+A modern, minimal starter template built with:
+
+- **Next.js 15** (App Router + TypeScript)
+- **Tailwind CSS v4**
+- Utility helpers: **`clsx`** and **`tailwind-merge`** via a `cn()` function for smart, conditional class handling
+
+---
+
+## 📦 Tech Stack
+
+| Tool / Library      | Purpose                                            |
+| ------------------- | -------------------------------------------------- |
+| **Next.js 15**      | React-based framework with App Router & TypeScript |
+| **Tailwind CSS v4** | Utility-first CSS framework                        |
+| **TypeScript**      | Static typing for safety and better DX             |
+| **clsx**            | Conditionally combine class names                  |
+| **tailwind-merge**  | Resolve conflicting Tailwind classes automatically |
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Create a New Project with Tailwind + TypeScript
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx create-next-app@latest my-app -e with-tailwindcss --typescript
+cd my-app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Additional Utilities
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install clsx tailwind-merge
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+These libraries are used in the `cn()` utility function for managing class names cleanly and efficiently.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ `cn()` Utility Function
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This function combines the strengths of:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **`clsx`** – for conditional class logic like `isActive && "bg-red"`
+- **`tailwind-merge`** – to automatically merge or override conflicting Tailwind utility classes for intelligently resolving
 
-## Deploy on Vercel
+> Helps keep your Tailwind `className` usage clean, conflict-free, and readable.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```ts
+// src/lib/utils.ts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(...inputs));
+}
+```
+
+### 📌 Example Usage
+
+```tsx
+<button className={cn("bg-blue-500 px-4", isActive && "bg-green-500", "px-6")}>
+  Click Me
+</button>
+```
+
+🔍 Output if `isActive = true`:
+
+```html
+class="bg-green-500 px-6"
+```
+
+- `bg-green-500` overrides `bg-blue-500`
+- `px-6` overrides `px-4`
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── app/              # App Router entry points (layout.tsx, page.tsx)
+├── components/       # Shared UI components
+├── lib/
+│   └── utils.ts      # cn() utility function
+├── styles/
+│   └── globals.css   # Global CSS & font imports
+```
+
+---
+
+## 🖋 Fonts (Optional)
+
+You can import a custom Google font in `globals.css`. For example:
+
+```css
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+* {
+  font-family: "Inter", sans-serif;
+}
+```
+
+---
+
+## 📜 Scripts
+
+```bash
+npm run dev     # Start development server
+npm run build   # Build production bundle
+npm run start   # Start production server
+```
