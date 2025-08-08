@@ -115,3 +115,24 @@ npm run dev     # Start development server
 npm run build   # Build production bundle
 npm run start   # Start production server
 ```
+
+## prettier-plugin-tailwindcss as a dev-dependency:
+
+A Prettier v3+ plugin for Tailwind CSS v3.0+ that automatically sorts classes based on our recommended class order.
+
+```bash
+npm install -D prettier prettier-plugin-tailwindcss
+```
+
+---
+
+## Then add the plugin to your Prettier configuration:
+
+```bash
+#.prettierrc.json
+{
+  "plugins": ["prettier-plugin-tailwindcss"]
+}
+```
+
+---
