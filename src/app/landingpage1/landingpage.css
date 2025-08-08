@@ -1,0 +1,11 @@
+/* animation for particle move bottom to up */
+@keyframes particleMove {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(
+      -100vh
+    ); /* Moves the particle up by full screen height */
+  }
+}
