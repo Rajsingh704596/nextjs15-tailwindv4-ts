@@ -2,7 +2,6 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-
   // remote image access like this ( define in next.config.ts)
   images: {
     remotePatterns: [
