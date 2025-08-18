@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,11 +24,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen bg-white`}
+        className={`${geistSans.variable} ${geistMono.variable}${geistMono.variable} antialiased`}
       >
-        {children}
+        {/* 2nd way to implement dark mode and light mode */}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <main className="bg-background text-foreground h-screen">
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );

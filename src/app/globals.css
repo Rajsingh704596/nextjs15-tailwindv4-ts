@@ -4,9 +4,47 @@
 
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *)); /* use for dark mode  */
+
+/* define variable for light mode */
+:root {
+  --background: var(--color-neutral-50);
+  --foreground: var(--color-neutral-950);
+}
+/* define variable for dark mode */
+.dark {
+  --background: var(--color-neutral-950);
+  --foreground: var(--color-neutral-50);
+}
+
+/* theme inline we can pass value that referencing another value  */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* keyframe animation apply like this in tailwind css */
+@theme {
+  --animate-marquee: marquee 10s linear infinite;
+  @keyframes marquee {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+}
+
 /* custom theme variable */
 @theme {
   --color-primary: oklch(68.5% 0.169 237.323);
   --font-manro: "Manrope", sans-serif;
   --font-geist: "Geist", sans-serif;
+
+  --shadow-rock:
+    0px 2px 3px -1px rgba(0, 0, 0, 0.1), 0px 1px 0px 0px rgba(25, 28, 33, 0.02),
+    0px 0px 0px 1px rgba(25, 28, 33, 0.08);
 }

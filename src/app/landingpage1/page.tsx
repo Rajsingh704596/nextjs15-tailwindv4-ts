@@ -39,11 +39,11 @@ const Page = () => {
           </header>
 
           {/* Hero section */}
-          <section className="my-20 flex flex-col items-center">
-            <h1 className="font-manro max-w-xl bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-center text-5xl leading-snug font-bold tracking-wide text-transparent">
+          <section className="my-10 flex flex-col items-center sm:my-20">
+            <h1 className="font-manro max-w-sm bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-center text-4xl leading-snug font-bold tracking-wide text-transparent sm:max-w-xl sm:text-5xl">
               Unleash the power of intuitive finance
             </h1>
-            <p className="font-geist mx-auto mt-10 max-w-3xl text-center text-neutral-400 selection:bg-white">
+            <p className="font-geist mx-auto mt-10 max-w-xs text-center text-neutral-400 selection:bg-white sm:max-w-3xl">
               say Goodbye to the Outdated tool. Every small
               <span className="text-primary"> business owner</span>, regardless
               of the background, can now manage their
@@ -54,7 +54,7 @@ const Page = () => {
               The future is glowing ✨
             </p>
 
-            <div className="flex w-full max-w-lg items-center justify-center gap-10">
+            <div className="flex w-full max-w-sm items-center justify-center gap-4 sm:max-w-lg sm:gap-10">
               <input
                 type="text"
                 placeholder="Enter your email"
