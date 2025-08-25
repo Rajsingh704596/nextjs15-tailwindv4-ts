@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useTheme } from "next-themes";
+import { ModeToggle } from "./ModeToggle";
 
 export const Navbar = () => {
   const links = [
@@ -61,6 +62,9 @@ export const Navbar = () => {
             {/* switch dark/light */}
             {theme === "light" ? "🌞" : "🌛"}
           </button>
+
+          {/* 3rd way dark /light mode button */}
+          <ModeToggle />
         </div>
 
         {/* hamburger button */}

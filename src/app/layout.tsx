@@ -31,7 +31,7 @@ export default function RootLayout({
         {/* 2nd way to implement dark mode and light mode */}
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {/* here theme-inline dark or light mode background or foreground color pass */}
-          <main className="bg-background text-foreground h-screen">
+          <main className="bg-background text-foreground h-full">
             {children}
           </main>
         </ThemeProvider>
