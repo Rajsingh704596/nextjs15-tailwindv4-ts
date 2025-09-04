@@ -1,5 +1,6 @@
 import { Grid } from "./BentoCard-Grid";
 import DarkModePage from "./Card";
+import { Form } from "./Form";
 
 import { Navbar } from "./Navbar";
 import { TransformCard3D } from "./TransformCard3D";
@@ -16,6 +17,9 @@ const page = () => {
       </div>
       <div className="mx-auto flex h-screen max-w-5xl items-center">
         <TransformCard3D />
+      </div>
+      <div>
+        <Form />
       </div>
     </>
   );
