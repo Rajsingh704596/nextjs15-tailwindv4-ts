@@ -1,6 +1,7 @@
 import { Grid } from "./BentoCard-Grid";
 import DarkModePage from "./Card";
 import { Form } from "./Form";
+import MasonaryGrid from "./MasonaryGrid";
 
 import { Navbar } from "./Navbar";
 import { SVGComponent } from "./svg-animation";
@@ -22,8 +23,11 @@ const page = () => {
       <div>
         <Form />
       </div>
-      <div className="mx-auto my-20 flex h-screen max-w-4xl flex-col items-center">
+      <div className="mx-auto my-20 flex max-w-4xl flex-col items-center">
         <SVGComponent />
+      </div>
+      <div className="p-20">
+        <MasonaryGrid />
       </div>
     </>
   );

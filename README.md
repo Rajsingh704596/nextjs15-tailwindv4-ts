@@ -1,6 +1,4 @@
----
-
-# 🚀 Next.js 15 + Tailwind CSS v4 Starter (TypeScript)
+# Next.js 15 + Tailwind CSS v4 Starter (TypeScript)
 
 A modern, minimal starter template built with:
 

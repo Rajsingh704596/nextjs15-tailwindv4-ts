@@ -52,3 +52,12 @@
 @theme {
   --color-line: var(--color-neutral-200);
 }
+
+/* Directive- @apply for tailwind css class create */
+.card {
+  @apply relative mx-auto mb-2 block max-w-xl overflow-hidden shadow-sm transition-all duration-200;
+}
+
+.overlay {
+  @apply after:absolute after:inset-0 after:h-full after:w-full after:bg-black after:opacity-0 after:transition-all after:duration-200 after:content-[''] hover:after:opacity-60;
+}
