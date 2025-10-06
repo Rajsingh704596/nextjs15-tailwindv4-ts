@@ -3,6 +3,7 @@ import DarkModePage from "./Card";
 import { Form } from "./Form";
 
 import { Navbar } from "./Navbar";
+import { SVGComponent } from "./svg-animation";
 import { TransformCard3D } from "./TransformCard3D";
 
 const page = () => {
@@ -20,6 +21,9 @@ const page = () => {
       </div>
       <div>
         <Form />
+      </div>
+      <div className="mx-auto my-20 flex h-screen max-w-4xl flex-col items-center">
+        <SVGComponent />
       </div>
     </>
   );
