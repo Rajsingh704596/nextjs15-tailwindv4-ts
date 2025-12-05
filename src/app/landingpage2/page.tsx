@@ -1,5 +1,6 @@
 import { Grid } from "./BentoCard-Grid";
 import DarkModePage from "./Card";
+import Cube from "./Cube";
 import { Form } from "./Form";
 import MasonaryGrid from "./MasonaryGrid";
 
@@ -28,6 +29,10 @@ const page = () => {
       </div>
       <div className="p-20">
         <MasonaryGrid />
+      </div>
+
+      <div className="p-20">
+        <Cube/>
       </div>
     </>
   );
